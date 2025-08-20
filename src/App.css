@@ -1,42 +1,126 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@600&family=Pacifico&display=swap');
+
+body {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  background: linear-gradient(-45deg, #ff6ec4, #7873f5, #17ead9, #f8cdda);
+  background-size: 400% 400%;
+  animation: gradientBG 12s ease infinite;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Orbitron', sans-serif;
+  color: white;
+}
+
+.container {
   text-align: center;
 }
 
+/* Logo styling */
+.logos {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  margin-bottom: 20px;
+}
+
 .logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
+  height: 100px;
+  transition: transform 0.5s;
+  filter: drop-shadow(0 0 15px rgba(255,255,255,0.6));
 }
+
 .logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+  transform: scale(1.2) rotate(10deg);
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/* Title & Subtitle */
+.title {
+  font-size: 3.5rem;
+  font-family: 'Pacifico', cursive;
+  margin: 10px 0;
+  text-shadow: 0 0 15px #fff, 0 0 30px #00f7ff;
+  animation: glow 2s ease-in-out infinite alternate;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+.subtitle {
+  font-size: 1.8rem;
+  letter-spacing: 2px;
+  margin-bottom: 30px;
+  text-shadow: 0 0 10px #ff00c8, 0 0 20px #ff00c8;
 }
 
+/* Card */
 .card {
-  padding: 2em;
+  background: rgba(0, 0, 0, 0.3);
+  padding: 20px 30px;
+  border-radius: 15px;
+  box-shadow: 0 0 20px rgba(0,0,0,0.5);
 }
 
-.read-the-docs {
-  color: #888;
+button {
+  background: linear-gradient(90deg, #00f7ff, #ff00c8);
+  border: none;
+  padding: 12px 25px;
+  font-size: 1rem;
+  border-radius: 12px;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+button:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 20px #00f7ff, 0 0 40px #ff00c8;
+}
+
+/* Animasi background */
+@keyframes gradientBG {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Animasi glow */
+@keyframes glow {
+  from { text-shadow: 0 0 10px #00f7ff, 0 0 20px #00f7ff; }
+  to { text-shadow: 0 0 20px #ff00c8, 0 0 40px #ff00c8; }
+}
+
+.btn-artikel {
+  margin-top: 20px;
+  background: linear-gradient(90deg, #ff00c8, #00f7ff);
+  border: none;
+  padding: 12px 25px;
+  font-size: 1.2rem;
+  border-radius: 12px;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.btn-artikel:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 20px #00f7ff, 0 0 40px #ff00c8;
+}
+
+.artikel-container {
+  margin-top: 40px;
+  text-align: center;
+  color: white;
+}
+
+textarea {
+  margin-top: 20px;
+  padding: 15px;
+  font-size: 1rem;
+  border-radius: 10px;
+  border: none;
+  outline: none;
+  width: 80%;
+  max-width: 600px;
 }
